@@ -3,9 +3,30 @@ import { useEffect } from "react";
 
 export default function ArraysAndHashing() {
 
+
+
+    const strs = ["act", "pots", "tops", "cat", "stop", "hat"]
+    // Group Anagrams
+    function groupAnagrams(strs: string[]) {
+        const map = {};
+
+        for (const str of strs) {
+            const sortedStr = str.split("").sort().join("")
+
+            if (!map[sortedStr]) {
+                map[sortedStr] = []
+            }
+
+            map[sortedStr].push(str)
+
+        }
+        return Object.values(map)
+
+    }
+
     useEffect(() => {
 
-
+        console.log(groupAnagrams(strs))
         // console.log(twoSum(nums, target))
 
         // console.log(isAnogram(s, t));
@@ -13,7 +34,6 @@ export default function ArraysAndHashing() {
         // console.log("using a hashmap: " + findDuplicates(nums))
         // console.log("using a set: " + findDuplicatesUsingSet(nums))
     }, [])
-
 
     // 3 
     // const nums = [3, 4, 5, 6]
@@ -27,6 +47,7 @@ export default function ArraysAndHashing() {
 
     //         if (map[complement] != undefined) {
     //             // found the sum
+    //             console.log(map)
     //             return [map[complement], i];
     //         }
 
