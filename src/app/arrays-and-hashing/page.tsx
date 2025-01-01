@@ -3,30 +3,16 @@ import { useEffect } from "react";
 
 export default function ArraysAndHashing() {
 
-
-
-    const strs = ["act", "pots", "tops", "cat", "stop", "hat"]
-    // Group Anagrams
-    function groupAnagrams(strs: string[]) {
-        const map = {};
-
-        for (const str of strs) {
-            const sortedStr = str.split("").sort().join("")
-
-            if (!map[sortedStr]) {
-                map[sortedStr] = []
-            }
-
-            map[sortedStr].push(str)
-
-        }
-        return Object.values(map)
-
-    }
+    const nums = [3, 4, 5, 6, 6, 6, 4, 1, 0, 9, 7, 9, 9, 9]
+    const k = 3
 
     useEffect(() => {
 
-        console.log(groupAnagrams(strs))
+
+        console.log(topKFrequent(nums, k))
+
+
+        // console.log(groupAnagrams(strs))
         // console.log(twoSum(nums, target))
 
         // console.log(isAnogram(s, t));
@@ -34,6 +20,45 @@ export default function ArraysAndHashing() {
         // console.log("using a hashmap: " + findDuplicates(nums))
         // console.log("using a set: " + findDuplicatesUsingSet(nums))
     }, [])
+
+    // 5 
+    function topKFrequent(nums: number[], k: number) {
+        const map = {}
+
+        for (const num of nums) {
+            map[num] = (map[num] || 0) + 1
+        }
+
+        console.log(map)
+
+        const sortedElements = Object.keys(map).sort((a, b) =>
+            map[b] - map[a]
+        )
+
+        console.log(sortedElements)
+
+        return sortedElements.slice(0, k).map(Number);
+
+    }
+
+
+    // 4.
+    // const strs = ["act", "pots", "tops", "cat", "stop", "hat"]
+    // function groupAnagrams(strs: string[]) {
+    //     const map = {};
+
+    //     for (const str of strs) {
+    //         const sortedStr = str.split("").sort().join("")
+
+    //         if (!map[sortedStr]) {
+    //             map[sortedStr] = []
+    //         }
+
+    //         map[sortedStr].push(str)
+
+    //     }
+    //     return Object.values(map)
+    // }
 
     // 3 
     // const nums = [3, 4, 5, 6]
