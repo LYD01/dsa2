@@ -3,14 +3,16 @@ import { useEffect } from "react";
 
 export default function ArraysAndHashing() {
 
-    const nums = [3, 4, 5, 6, 6, 6, 4, 1, 0, 9, 7, 9, 9, 9]
-    const k = 3
+    // const nums = [3, 4, 5, 6, 6, 6, 4, 1, 0, 9, 7, 9, 9, 9]
+    // const k = 3
+    const strs = ['apple', 'banana', 'cat']
 
     useEffect(() => {
 
+        console.log(encodeStr(strs))
+        console.log(decodeStr(encodeStr(strs)))
 
-        console.log(topKFrequent(nums, k))
-
+        // console.log(topKFrequent(nums, k))
 
         // console.log(groupAnagrams(strs))
         // console.log(twoSum(nums, target))
@@ -21,25 +23,55 @@ export default function ArraysAndHashing() {
         // console.log("using a set: " + findDuplicatesUsingSet(nums))
     }, [])
 
-    // 5 
-    function topKFrequent(nums: number[], k: number) {
-        const map = {}
 
-        for (const num of nums) {
-            map[num] = (map[num] || 0) + 1
+    // 6
+    function encodeStr(strs: string[]) {
+        let res = "";
+
+        for (const str of strs) {
+
+            res += String(str.length) + "#" + str
+
         }
-
-        console.log(map)
-
-        const sortedElements = Object.keys(map).sort((a, b) =>
-            map[b] - map[a]
-        )
-
-        console.log(sortedElements)
-
-        return sortedElements.slice(0, k).map(Number);
-
+        return res;
     }
+
+    function decodeStr(str: string) {
+        let i = 0
+        const res = []
+
+        while (i < str.length) {
+            const j = str.indexOf("#", i)
+            const length = parseInt(str.slice(i, j), 10)
+            const strExtract = str.slice(j + 1, j + 1 + length)
+            res.push(strExtract)
+
+            i = j + 1 + length;
+
+        }
+        return res;
+    }
+
+
+    // 5 
+    // function topKFrequent(nums: number[], k: number) {
+    //     const map = {}
+
+    //     for (const num of nums) {
+    //         map[num] = (map[num] || 0) + 1
+    //     }
+
+    //     console.log(map)
+
+    //     const sortedElements = Object.keys(map).sort((a, b) =>
+    //         map[b] - map[a]
+    //     )
+
+    //     console.log(sortedElements)
+
+    //     return sortedElements.slice(0, k).map(Number);
+
+    // }
 
 
     // 4.
@@ -125,9 +157,11 @@ export default function ArraysAndHashing() {
     // }
 
     return (
-        <div>
+        <div className="p-4">
             <h1>Arrays and Hashing</h1>
-            <ul className="list-disc">
+            <ul className="list-disc ml-4">
+                <li>encode and decode strings</li>
+                <li>top K frequent</li>
                 <li>find duplicates</li>
                 <li>is anogram</li>
                 <li>two sum</li>
