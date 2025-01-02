@@ -1,56 +1,68 @@
-"use client"
-import { useEffect } from "react";
 
 export default function ArraysAndHashing() {
 
-    // const nums = [3, 4, 5, 6, 6, 6, 4, 1, 0, 9, 7, 9, 9, 9]
+    // const nums = [1, 2, 3, 4]
     // const k = 3
-    const strs = ['apple', 'banana', 'cat']
+    // const strs = ['apple', 'banana', 'cat']
 
-    useEffect(() => {
+    // console.log(productExceptSelf(nums))
 
-        console.log(encodeStr(strs))
-        console.log(decodeStr(encodeStr(strs)))
+    // console.log(encodeStr(strs))
+    // console.log(decodeStr(encodeStr(strs)))
 
-        // console.log(topKFrequent(nums, k))
+    // console.log(topKFrequent(nums, k))
 
-        // console.log(groupAnagrams(strs))
-        // console.log(twoSum(nums, target))
+    // console.log(groupAnagrams(strs))
+    // console.log(twoSum(nums, target))
 
-        // console.log(isAnogram(s, t));
+    // console.log(isAnogram(s, t));
 
-        // console.log("using a hashmap: " + findDuplicates(nums))
-        // console.log("using a set: " + findDuplicatesUsingSet(nums))
-    }, [])
+    // console.log("using a hashmap: " + findDuplicates(nums))
+    // console.log("using a set: " + findDuplicatesUsingSet(nums))
+
+
+    // 7. Products of array except self
+    // function productExceptSelf(nums: number[]) {
+    //     const n = nums.length;
+    //     const result = new Array(n).fill(1);
+
+    //     let prefix = 1;
+    //     for (let i = 0; i < n; i++) {
+    //         // take prefix and put in pos i
+    //         result[i] = prefix
+    //         prefix *= nums[i]
+    //     }
+
+    //     let postfix = 1;
+    //     for (let i = n - 1; i >= 0; i--) {
+    //         result[i] *= postfix
+    //         postfix *= nums[i]
+    //     }
+    //     return result;
+    // }
 
 
     // 6
-    function encodeStr(strs: string[]) {
-        let res = "";
+    // function encodeStr(strs: string[]) {
+    //     let res = "";
+    //     for (const str of strs) {
+    //         res += String(str.length) + "#" + str
+    //     }
+    //     return res;
+    // }
 
-        for (const str of strs) {
-
-            res += String(str.length) + "#" + str
-
-        }
-        return res;
-    }
-
-    function decodeStr(str: string) {
-        let i = 0
-        const res = []
-
-        while (i < str.length) {
-            const j = str.indexOf("#", i)
-            const length = parseInt(str.slice(i, j), 10)
-            const strExtract = str.slice(j + 1, j + 1 + length)
-            res.push(strExtract)
-
-            i = j + 1 + length;
-
-        }
-        return res;
-    }
+    // function decodeStr(str: string) {
+    //     let i = 0
+    //     const res = []
+    //     while (i < str.length) {
+    //         const j = str.indexOf("#", i)
+    //         const length = parseInt(str.slice(i, j), 10)
+    //         const strExtract = str.slice(j + 1, j + 1 + length)
+    //         res.push(strExtract)
+    //         i = j + 1 + length;
+    //     }
+    //     return res;
+    // }
 
 
     // 5 
@@ -160,6 +172,7 @@ export default function ArraysAndHashing() {
         <div className="p-4">
             <h1>Arrays and Hashing</h1>
             <ul className="list-disc ml-4">
+                <li>products of array except self</li>
                 <li>encode and decode strings</li>
                 <li>top K frequent</li>
                 <li>find duplicates</li>
