@@ -1,6 +1,20 @@
 
 export default function ArraysAndHashing() {
 
+    // const board = [
+    //     ["1", "2", ".", ".", "3", ".", ".", ".", "."],
+    //     ["4", ".", ".", "5", ".", ".", ".", ".", "."],
+    //     [".", "9", "8", ".", ".", ".", ".", ".", "3"],
+    //     ["5", ".", ".", ".", "6", ".", ".", ".", "4"],
+    //     [".", ".", ".", "8", ".", "3", ".", ".", "5"],
+    //     ["7", ".", ".", ".", "2", ".", ".", ".", "6"],
+    //     [".", ".", ".", ".", ".", ".", "2", ".", "."],
+    //     [".", ".", ".", "4", "1", "9", ".", ".", "8"],
+    //     [".", ".", ".", ".", "8", ".", ".", "7", "9"]
+    // ];
+
+    // console.log(isValidSudoku(board))
+
     // const nums = [1, 2, 3, 4]
     // const k = 3
     // const strs = ['apple', 'banana', 'cat']
@@ -20,6 +34,34 @@ export default function ArraysAndHashing() {
     // console.log("using a hashmap: " + findDuplicates(nums))
     // console.log("using a set: " + findDuplicatesUsingSet(nums))
 
+
+    // 8. Valiid Sudoku
+
+    // function isValidSudoku(board: string[][]) {
+    //     const cols = Array.from({ length: 9 }, () => new Set());
+    //     const rows = Array.from({ length: 9 }, () => new Set());
+    //     const boxes = Array.from({ length: 9 }, () => new Set());
+
+
+    //     for (let r = 0; r < 9; r++) {
+    //         for (let c = 0; c < 9; c++) {
+    //             const value = board[r][c];
+
+    //             if (value === ".") continue
+
+    //             const boxIndex = Math.floor(r / 3) * 3 + Math.floor(c / 3);
+
+    //             if (rows[r].has(value) || cols[c].has(value) || boxes[boxIndex].has(value)) {
+    //                 return false;
+    //             }
+
+    //             rows[r].add(value)
+    //             cols[c].add(value)
+    //             boxes[boxIndex].add(value)
+    //         }
+    //     }
+    //     return true
+    // }
 
     // 7. Products of array except self
     // function productExceptSelf(nums: number[]) {
