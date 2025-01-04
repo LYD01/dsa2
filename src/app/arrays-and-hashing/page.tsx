@@ -1,6 +1,28 @@
 
 export default function ArraysAndHashing() {
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    const nums = [1, 2, 3, 4, 100, 99, 33]
+
+
+
+    console.log(longestConsecutive(nums))
+
+
+
     // const board = [
     //     ["1", "2", ".", ".", "3", ".", ".", ".", "."],
     //     ["4", ".", ".", "5", ".", ".", ".", ".", "."],
@@ -33,6 +55,27 @@ export default function ArraysAndHashing() {
 
     // console.log("using a hashmap: " + findDuplicates(nums))
     // console.log("using a set: " + findDuplicatesUsingSet(nums))
+
+
+    // 9 Longest Consecutive Sequence
+    function longestConsecutive(nums: number[]) {
+        const numSet = new Set(nums)
+        let longest = 0 // init tracking of the longest consec seq
+
+        for (const num of numSet) {
+            if (!numSet.has(1 - num)) {
+
+                let length = 0
+
+                while (numSet.has(num + length)) {
+                    length += 1;
+                }
+                longest = Math.max(length, longest)
+            }
+        }
+        return longest
+
+    }
 
 
     // 8. Valiid Sudoku
@@ -214,6 +257,7 @@ export default function ArraysAndHashing() {
         <div className="p-4">
             <h1>Arrays and Hashing</h1>
             <ul className="list-disc ml-4">
+                <li>longest consecutive sequence</li>
                 <li>products of array except self</li>
                 <li>encode and decode strings</li>
                 <li>top K frequent</li>
