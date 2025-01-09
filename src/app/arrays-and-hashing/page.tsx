@@ -1,27 +1,9 @@
 
 export default function ArraysAndHashing() {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // const nums = [1, 2, 3, 4, 100, 99, 33]
 
-
-
     // console.log(longestConsecutive(nums))
-
-
 
     // const board = [
     //     ["1", "2", ".", ".", "3", ".", ".", ".", "."],
@@ -195,28 +177,28 @@ export default function ArraysAndHashing() {
     // groupAnagrams(strs)
 
     // groupAnagrams2
-    const strs = ["act", "pots", "tops", "cat", "stop", "hat"]
-    function groupAnagrams2(strs: string[]) {
-        const map = {}
+    // const strs = ["act", "pots", "tops", "cat", "stop", "hat"]
+    // function groupAnagrams2(strs: string[]) {
+    //     const map = {}
 
-        for (const str of strs) {
-            const count = new Array(26).fill(0);
+    //     for (const str of strs) {
+    //         const count = new Array(26).fill(0);
 
-            for (const char of str) {
-                count[char.charCodeAt(0) - 'a'.charCodeAt(0)]++
-            }
+    //         for (const char of str) {
+    //             count[char.charCodeAt(0) - 'a'.charCodeAt(0)]++
+    //         }
 
-            const key = count.join('#')
-            if (!map[key]) {
-                map[key] = []
-            }
+    //         const key = count.join('#')
+    //         if (!map[key]) {
+    //             map[key] = []
+    //         }
 
-            map[key].push(str)
-        }
-        return Object.values(map)
-    }
+    //         map[key].push(str)
+    //     }
+    //     return Object.values(map)
+    // }
 
-    console.log(groupAnagrams2(strs)) // output: [ [ 'act', 'pots', 'tops', 'cat', 'stop', 'hat' ] ]
+    // console.log(groupAnagrams2(strs)) // output: [ [ 'act', 'pots', 'tops', 'cat', 'stop', 'hat' ] ]
     // groupAnagrams2(strs)
 
 
