@@ -15,11 +15,11 @@ export default function ArraysAndHashing() {
 
 
 
-    const nums = [1, 2, 3, 4, 100, 99, 33]
+    // const nums = [1, 2, 3, 4, 100, 99, 33]
 
 
 
-    console.log(longestConsecutive(nums))
+    // console.log(longestConsecutive(nums))
 
 
 
@@ -37,8 +37,7 @@ export default function ArraysAndHashing() {
 
     // console.log(isValidSudoku(board))
 
-    // const nums = [1, 2, 3, 4]
-    // const k = 3
+
     // const strs = ['apple', 'banana', 'cat']
 
     // console.log(productExceptSelf(nums))
@@ -46,9 +45,9 @@ export default function ArraysAndHashing() {
     // console.log(encodeStr(strs))
     // console.log(decodeStr(encodeStr(strs)))
 
-    // console.log(topKFrequent(nums, k))
 
-    // console.log(groupAnagrams(strs))
+
+
     // console.log(twoSum(nums, target))
 
     // console.log(isAnogram(s, t));
@@ -58,24 +57,24 @@ export default function ArraysAndHashing() {
 
 
     // 9 Longest Consecutive Sequence
-    function longestConsecutive(nums: number[]) {
-        const numSet = new Set(nums)
-        let longest = 0 // init tracking of the longest consec seq
+    // function longestConsecutive(nums: number[]) {
+    //     const numSet = new Set(nums)
+    //     let longest = 0 // init tracking of the longest consec seq
 
-        for (const num of numSet) {
-            if (!numSet.has(1 - num)) {
+    //     for (const num of numSet) {
+    //         if (!numSet.has(1 - num)) {
 
-                let length = 0
+    //             let length = 0
 
-                while (numSet.has(num + length)) {
-                    length += 1;
-                }
-                longest = Math.max(length, longest)
-            }
-        }
-        return longest
+    //             while (numSet.has(num + length)) {
+    //                 length += 1;
+    //             }
+    //             longest = Math.max(length, longest)
+    //         }
+    //     }
+    //     return longest
 
-    }
+    // }
 
 
     // 8. Valiid Sudoku
@@ -151,6 +150,9 @@ export default function ArraysAndHashing() {
 
 
     // 5 
+
+    // const nums = [1, 1, 2, 3, 4, 4, 4,]
+    // const k = 2
     // function topKFrequent(nums: number[], k: number) {
     //     const map = {}
 
@@ -169,6 +171,7 @@ export default function ArraysAndHashing() {
     //     return sortedElements.slice(0, k).map(Number);
 
     // }
+    // console.log(topKFrequent(nums, k))
 
 
     // 4.
@@ -188,6 +191,34 @@ export default function ArraysAndHashing() {
     //     }
     //     return Object.values(map)
     // }
+    // // console.log(groupAnagrams(strs))
+    // groupAnagrams(strs)
+
+    // groupAnagrams2
+    const strs = ["act", "pots", "tops", "cat", "stop", "hat"]
+    function groupAnagrams2(strs: string[]) {
+        const map = {}
+
+        for (const str of strs) {
+            const count = new Array(26).fill(0);
+
+            for (const char of str) {
+                count[char.charCodeAt(0) - 'a'.charCodeAt(0)]++
+            }
+
+            const key = count.join('#')
+            if (!map[key]) {
+                map[key] = []
+            }
+
+            map[key].push(str)
+        }
+        return Object.values(map)
+    }
+
+    console.log(groupAnagrams2(strs)) // output: [ [ 'act', 'pots', 'tops', 'cat', 'stop', 'hat' ] ]
+    // groupAnagrams2(strs)
+
 
     // 3 
     // const nums = [3, 4, 5, 6]
