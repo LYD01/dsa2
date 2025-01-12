@@ -1,5 +1,22 @@
 export default function stack() {
 
+
+    // 6.
+    function carFleet() {
+        // map sort array of index + positions
+        // us stack length of stack is number of car fleets
+        // loop through both values in array
+        // calc time to reach target
+        // if time > stack.top() // if this car cannot make it to the top of the stack, start new fleet
+        // return stack.length
+
+
+
+
+
+    }
+
+
     // 5. 
     // const temps = [30, 38, 30, 36, 35, 40, 28]
     // function dailyTemperatures(temps: number[]) {
