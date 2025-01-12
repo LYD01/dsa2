@@ -2,7 +2,10 @@ export default function stack() {
 
 
     // 6.
-    function carFleet() {
+    const target = 10
+    const position = [1, 4]
+    const speed = [3, 2]
+    function carFleet(target: number, position: number[], speed: number[]): number {
         // map sort array of index + positions
         // us stack length of stack is number of car fleets
         // loop through both values in array
@@ -10,11 +13,21 @@ export default function stack() {
         // if time > stack.top() // if this car cannot make it to the top of the stack, start new fleet
         // return stack.length
 
+        const cars = position.map((pos, i) => [pos, speed[i]]).sort((a, b) => b[0] - a[0]) // [[key:val], [speed:pos]]
+        const stack: number[] = []
 
+        for (const [pos, spd] of cars) {
+            const time = (target - pos) / spd
 
+            if (stack.length === 0 || time > stack[stack.length - 1]) {
+                stack.push(time)
+            }
+        }
 
-
+        return stack.length
     }
+
+    console.log(carFleet(target, position, speed))
 
 
     // 5. 
