@@ -1,22 +1,22 @@
 export default function stack() {
 
     // 5. 
-    const temps = [30, 38, 30, 36, 35, 40, 28]
-    function dailyTemperatures(temps: number[]) {
-        const stack: number[] = []
-        const res = new Array(temps.length).fill(0)
+    // const temps = [30, 38, 30, 36, 35, 40, 28]
+    // function dailyTemperatures(temps: number[]) {
+    //     const stack: number[] = []
+    //     const res = new Array(temps.length).fill(0)
 
-        for (let i = 0; i < temps.length; i++) {
-            while (stack.length > 0 && temps[i] > temps[stack[stack.length - 1]]) {
-                const prevIndex = stack.pop()
-                res[prevIndex] = i - prevIndex
+    //     for (let i = 0; i < temps.length; i++) {
+    //         while (stack.length > 0 && temps[i] > temps[stack[stack.length - 1]]) {
+    //             const prevIndex = stack.pop()
+    //             res[prevIndex] = i - prevIndex
 
-            }
-            stack.push(i)
-        }
-        return res
-    }
-    console.log(dailyTemperatures(temps))
+    //         }
+    //         stack.push(i)
+    //     }
+    //     return res
+    // }
+    // console.log(dailyTemperatures(temps))
 
 
     // 4. 
