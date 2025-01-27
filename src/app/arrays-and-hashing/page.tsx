@@ -1,23 +1,8 @@
 
 export default function ArraysAndHashing() {
 
-    // const nums = [1, 2, 3, 4, 100, 99, 33]
 
-    // console.log(longestConsecutive(nums))
 
-    // const board = [
-    //     ["1", "2", ".", ".", "3", ".", ".", ".", "."],
-    //     ["4", ".", ".", "5", ".", ".", ".", ".", "."],
-    //     [".", "9", "8", ".", ".", ".", ".", ".", "3"],
-    //     ["5", ".", ".", ".", "6", ".", ".", ".", "4"],
-    //     [".", ".", ".", "8", ".", "3", ".", ".", "5"],
-    //     ["7", ".", ".", ".", "2", ".", ".", ".", "6"],
-    //     [".", ".", ".", ".", ".", ".", "2", ".", "."],
-    //     [".", ".", ".", "4", "1", "9", ".", ".", "8"],
-    //     [".", ".", ".", ".", "8", ".", ".", "7", "9"]
-    // ];
-
-    // console.log(isValidSudoku(board))
 
 
     // const strs = ['apple', 'banana', 'cat']
@@ -39,28 +24,43 @@ export default function ArraysAndHashing() {
 
 
     // 9 Longest Consecutive Sequence
-    // function longestConsecutive(nums: number[]) {
-    //     const numSet = new Set(nums)
-    //     let longest = 0 // init tracking of the longest consec seq
+    const nums = [1, 2, 3, 4, 100, 99, 33]
+    function longestConsecutive(nums: number[]) {
+        const numSet = new Set(nums)
+        let longest = 0 // init tracking of the longest consec seq
 
-    //     for (const num of numSet) {
-    //         if (!numSet.has(1 - num)) {
+        for (const num of numSet) {
+            if (!numSet.has(1 - num)) {
 
-    //             let length = 0
+                let length = 0
 
-    //             while (numSet.has(num + length)) {
-    //                 length += 1;
-    //             }
-    //             longest = Math.max(length, longest)
-    //         }
-    //     }
-    //     return longest
+                while (numSet.has(num + length)) {
+                    length += 1;
+                }
+                console.log(longest)
 
-    // }
+                longest = Math.max(length, longest)
+            }
+        }
+
+        return longest
+
+    }
+    longestConsecutive(nums)
 
 
     // 8. Valiid Sudoku
-
+    // const board = [
+    //     ["1", "2", ".", ".", "3", ".", ".", ".", "."],
+    //     ["4", ".", ".", "5", ".", ".", ".", ".", "."],
+    //     [".", "9", "8", ".", ".", ".", ".", ".", "3"],
+    //     ["5", ".", ".", ".", "6", ".", ".", ".", "4"],
+    //     [".", ".", ".", "8", ".", "3", ".", ".", "5"],
+    //     ["7", ".", ".", ".", "2", ".", ".", ".", "6"],
+    //     [".", ".", ".", ".", ".", ".", "2", ".", "."],
+    //     [".", ".", ".", "4", "1", "9", ".", ".", "8"],
+    //     [".", ".", ".", ".", "8", ".", ".", "7", "9"]
+    // ];
     // function isValidSudoku(board: string[][]) {
     //     const cols = Array.from({ length: 9 }, () => new Set());
     //     const rows = Array.from({ length: 9 }, () => new Set());
@@ -74,6 +74,7 @@ export default function ArraysAndHashing() {
     //             if (value === ".") continue
 
     //             const boxIndex = Math.floor(r / 3) * 3 + Math.floor(c / 3);
+    //             // console.log(r, c)
 
     //             if (rows[r].has(value) || cols[c].has(value) || boxes[boxIndex].has(value)) {
     //                 return false;
@@ -86,6 +87,8 @@ export default function ArraysAndHashing() {
     //     }
     //     return true
     // }
+
+    // isValidSudoku(board)
 
     // 7. Products of array except self
     // function productExceptSelf(nums: number[]) {
@@ -109,6 +112,7 @@ export default function ArraysAndHashing() {
 
 
     // 6
+    // const strs = ["neet", "code", "love", "you"]
     // function encodeStr(strs: string[]) {
     //     let res = "";
     //     for (const str of strs) {
@@ -129,6 +133,9 @@ export default function ArraysAndHashing() {
     //     }
     //     return res;
     // }
+    // console.log(encodeStr(strs))
+
+
 
 
     // 5 
@@ -171,6 +178,7 @@ export default function ArraysAndHashing() {
     //         map[sortedStr].push(str)
 
     //     }
+    //     console.log(Object.values(map))
     //     return Object.values(map)
     // }
     // // console.log(groupAnagrams(strs))
@@ -225,7 +233,9 @@ export default function ArraysAndHashing() {
     //         */
     //         map[num] = i;
     //     }
+    //     console.log(map)
     // }
+    // twoSum(nums, target)
 
 
     // 2.
