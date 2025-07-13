@@ -24,29 +24,29 @@ export default function ArraysAndHashing() {
 
 
     // 9 Longest Consecutive Sequence
-    const nums = [1, 2, 3, 4, 100, 99, 33]
-    function longestConsecutive(nums: number[]) {
-        const numSet = new Set(nums)
-        let longest = 0 // init tracking of the longest consec seq
+    // const nums = [1, 2, 3, 4, 100, 99, 33]
+    // function longestConsecutive(nums: number[]) {
+    //     const numSet = new Set(nums)
+    //     let longest = 0 // init tracking of the longest consec seq
 
-        for (const num of numSet) {
-            if (!numSet.has(1 - num)) {
+    //     for (const num of numSet) {
+    //         if (!numSet.has(1 - num)) {
 
-                let length = 0
+    //             let length = 0
 
-                while (numSet.has(num + length)) {
-                    length += 1;
-                }
-                console.log(longest)
+    //             while (numSet.has(num + length)) {
+    //                 length += 1;
+    //             }
+    //             console.log(longest)
 
-                longest = Math.max(length, longest)
-            }
-        }
+    //             longest = Math.max(length, longest)
+    //         }
+    //     }
 
-        return longest
+    //     return longest
 
-    }
-    longestConsecutive(nums)
+    // }
+    // longestConsecutive(nums)
 
 
     // 8. Valiid Sudoku
@@ -139,7 +139,6 @@ export default function ArraysAndHashing() {
 
 
     // 5 
-
     // const nums = [1, 1, 2, 3, 4, 4, 4,]
     // const k = 2
     // function topKFrequent(nums: number[], k: number) {
@@ -149,7 +148,7 @@ export default function ArraysAndHashing() {
     //         map[num] = (map[num] || 0) + 1
     //     }
 
-    //     console.log(map)
+    //     // console.log(map)
 
     //     const sortedElements = Object.keys(map).sort((a, b) =>
     //         map[b] - map[a]
@@ -160,7 +159,8 @@ export default function ArraysAndHashing() {
     //     return sortedElements.slice(0, k).map(Number);
 
     // }
-    // console.log(topKFrequent(nums, k))
+    // // console.log(topKFrequent(nums, k))
+    // topKFrequent(nums, k)
 
 
     // 4.
@@ -222,7 +222,7 @@ export default function ArraysAndHashing() {
 
     //         if (map[complement] != undefined) {
     //             // found the sum
-    //             console.log(map)
+    //             // console.log(map)
     //             return [map[complement], i];
     //         }
 
@@ -231,9 +231,10 @@ export default function ArraysAndHashing() {
     //             1. map[num]: This is where we use the value of the current number (num) as a key in the map (the hash map or JavaScript object).
     //             2. = i: We set the value for that key (map[num]) to be the index (i) of num in the nums array.
     //         */
+    //         // console.log(map[num] = i)
     //         map[num] = i;
+    //         console.log(map)
     //     }
-    //     console.log(map)
     // }
     // twoSum(nums, target)
 
